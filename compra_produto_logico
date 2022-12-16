@@ -1,4 +1,4 @@
-/* Lógico_1: */
+Lógico
 
 CREATE TABLE Pessoa (
     idPessoa INT PRIMARY KEY,
