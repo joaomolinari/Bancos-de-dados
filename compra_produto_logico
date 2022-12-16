@@ -1,4 +1,4 @@
-Lógico
+Físico
 
 CREATE TABLE Pessoa (
     idPessoa INT PRIMARY KEY,
