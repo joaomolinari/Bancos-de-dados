@@ -1,0 +1,38 @@
+/* Lógico_1: */
+
+CREATE TABLE Pessoa (
+    idPessoa INT PRIMARY KEY,
+    nomePessoa VARCHAR,
+    cpfPessoa VARCHAR,
+    passaportePessoa VARCHAR,
+    rgPessoa VARCHAR,
+    dataAniversarioPessoa DATE,
+    telefonePessoa NUMERIC,
+    cep VARCHAR,
+    bairro VARCHAR,
+    rua VARCHAR
+);
+
+CREATE TABLE Produto (
+    idProduto INT PRIMARY KEY,
+    marcaProduto VARCHAR,
+    precoProduto VARCHAR,
+    modeloProduto VARCHAR,
+    dataValidadeProduto VARCHAR
+);
+
+CREATE TABLE compra (
+    fk_Produto_idProduto INT,
+    fk_Pessoa_idPessoa INT,
+    PRIMARY KEY (fk_Produto_idProduto, fk_Pessoa_idPessoa)
+);
+ 
+ALTER TABLE compra ADD CONSTRAINT FK_compra_1
+    FOREIGN KEY (fk_Produto_idProduto)
+    REFERENCES Produto (idProduto)
+    ON DELETE SET NULL;
+ 
+ALTER TABLE compra ADD CONSTRAINT FK_compra_2
+    FOREIGN KEY (fk_Pessoa_idPessoa)
+    REFERENCES Pessoa (idPessoa)
+    ON DELETE SET NULL;
